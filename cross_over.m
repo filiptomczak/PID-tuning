@@ -1,12 +1,12 @@
 function new_pop=cross_over(pop,pops,strl,dim)
-match=round(rand(1,pops)*(pops-1))+1; %wybór które elementy zostan¹ rodzicami
+match=round(rand(1,pops)*(pops-1))+1; %choose which element will be parent
 for i=1:pops
     [child1,child2]=cross_running(pop(i,:),pop(match(i),:),strl,dim); %cross_running(parent1,parent2,strl,dim)
     new_pop(2*i-1:2*i,:)=[child1;child2];
 end
 
 function [child1,child2]=cross_running(parent1,parent2,strl,dim)
-cpoint=round(((strl-1)*rand(1,dim))+1); %wartosc domyslna z przedzialu od 1-9
+cpoint=round(((strl-1)*rand(1,dim))+1); %random number in range 1-9
 
 for j=1:dim
     child1((j-1)*strl+1:j*strl)=[parent1((j-1)*strl+1:(j-1)*strl+cpoint(j)),parent2((j-1)*strl+cpoint(j)+1:j*strl)];
