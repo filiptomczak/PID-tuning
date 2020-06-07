@@ -26,7 +26,7 @@ for i=1:20 %iteracje
     new_pop=cross_over(pop,pops,strl,dim);
     pop=mutation(new_pop,strl,dim,pm);
     pop=decoding(pop,strl,dim,x_bound);
-    [number,k]=min(pop(:,strl*dim+1)); %wybor najmniejszej wartosci funckji celu
+    [number,k]=min(pop(:,strl*dim+1)); %choose min funname value
     
     if choice_number>number
         choice_number=number;
