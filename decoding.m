@@ -9,9 +9,9 @@ for i=1:pops
     for j=1:dim
         m(:,j)=pop(i,strl*(j-1)+1:strl*j); %pop(1,1:8) pop(1,9:16) pop(1,17:24)
     end
-    x=temp*m; %m to macierz w ktorej kolumny to wart x1,x2 i x3, wymnazamy przez potegi dwójki
-    x=x.*bound+x_bound(:,1)' ;%mnozymy przez granice 
+    x=temp*m; %m is matrix with cols x1,x2 i x3, multiplied by power of 2
+    x=x.*bound+x_bound(:,1)' ;%multiplied by the bounds
     
-    pop(i,dim*strl+1)=funname(x); %do macierzy populacji dopisujemy wartosc funkcji celu
+    pop(i,dim*strl+1)=funname(x); %population matrix is populated with funname values
 
 end
